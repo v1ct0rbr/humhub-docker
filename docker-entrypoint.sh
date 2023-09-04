@@ -264,6 +264,9 @@ else
 	echo >&3 "$0: No files found in /docker-entrypoint.d/, skipping configuration"
 fi
 
+
+
+
 echo >&3 "$0: Entrypoint finished! Launching ..."
 
 exec "$@"

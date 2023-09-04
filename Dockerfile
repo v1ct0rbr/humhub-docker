@@ -66,7 +66,7 @@ ARG RUNTIME_DEPS="\
 
 FROM docker.io/library/alpine:3.15.4 as builder
 
-ARG HUMHUB_VERSION
+ARG HUMHUB_VERSION=1.6
 ARG BUILD_DEPS
 
 RUN apk add --no-cache --update $BUILD_DEPS && \
@@ -92,7 +92,7 @@ RUN composer config --no-plugins allow-plugins.yiisoft/yii2-composer true && \
 
 FROM docker.io/library/alpine:3.15.4 as base
 
-ARG HUMHUB_VERSION
+ARG HUMHUB_VERSION=1.6
 ARG RUNTIME_DEPS
 LABEL name="HumHub" version=${HUMHUB_VERSION} variant="base" \
       org.label-schema.build-date=$BUILD_DATE \
